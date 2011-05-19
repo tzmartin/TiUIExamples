@@ -1,0 +1,9 @@
+*.tar.gz
+*~
+build/iphone/*
+build/android/*
+tmp
+.settings
+*.DS_Store
+*.swp
+*.project
