@@ -4,6 +4,8 @@
 
 This app is a collection of various UI design patterns written as JavaScript modules for Titanium Mobile.  This will show you how to develop and implement factory components for event driven mobile applications.
 
+THIS IS FOR iOS ONLY.  Sorry.  Android support is coming next.
+
 ## Accessing the Module API
 
 To access these modules from JavaScript, you would extend your app namespace in app.js:
