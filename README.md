@@ -27,27 +27,27 @@ More modules to come...
 To access these modules from JavaScript, you would extend your app namespace in app.js and import the module using the global require() method:
 
 ```
-    // Extend your existing app namespace for your modules to exist
-	  MyApp.mod = {};
-    MyApp.mod.hud = require('modules/hud');
-    MyApp.mod.passcode = require('modules/passcode.mod');
+// Extend your existing app namespace for your modules to exist
+MyApp.mod = {};
+MyApp.mod.hud = require('modules/hud');
+MyApp.mod.passcode = require('modules/passcode.mod');
 ```
 
 ## Usage
 
 ### HUD - MyApp.mod.hud
 ```
-  var HUD = MyApp.mod.hud.init(MyApp.ui.win); // pass in the window to attach the HUD
-	HUD.show('YOUR MESSAGE');
-	setTimeout(function(){
-		HUD.hide();
-	},2000);
+var HUD = MyApp.mod.hud.init(MyApp.ui.win); // pass in the window to attach the HUD
+HUD.show('YOUR MESSAGE');
+setTimeout(function(){
+	HUD.hide();
+},2000);
 ```
 #### Methods
 ```
-  init(win);      // window object (required)
-  show(message);  // message (optional)
-  hide();         
+init(win);      // window object (required)
+show(message);  // message (optional)
+hide();         
 ```
 1. Initialize the module using the `init()` method and pass in a 4 digit number to validate against.  
 2. Show a HUD by calling `show()`, passing an optional message to the component.
@@ -57,19 +57,19 @@ Note: Replace 'MyApp' with your own app namespace.
 
 ### Passcode - MyApp.mod.passcode
 ```
-  var PIN = MyApp.mod.passcode.init({code:1234,barColor:'#0079C1'});
-	PIN.open({
-		success:function(){
-		// do something
-	},error:function(){
-		// do something
-	}});
+var PIN = MyApp.mod.passcode.init({code:1234,barColor:'#0079C1'});
+PIN.open({
+	success:function(){
+	// do something
+},error:function(){
+	// do something
+}});
 ```
 #### Methods
 ```
-  init(code,barColor);  // 4 digit number (required), barColor (optional)
-  open(success,error);  // success callback (optional), error callback (optional)
-  close();              // force close a passcode window
+init(code,barColor);  // 4 digit number (required), barColor (optional)
+open(success,error);  // success callback (optional), error callback (optional)
+close();              // force close a passcode window
 ```
 1. Initialize the module using the `init()` method and pass in a 4 digit number to validate against. 
 2. Show a passcode window by calling `open()`.  You can optionally pass in two callbacks: "success" and "error" that will be executed on each event.  This is where you can choose to allow a user to continue or not.
