@@ -8,14 +8,14 @@ THIS IS FOR iOS ONLY.  Sorry.  Android support is coming next.
 
 ![Screenshot 1](https://img.skitch.com/20110520-d1eeyexu28scp7xnpieenirwmd.jpg)
 
-### The Modules
+## The Modules
 
-#### Heads Up Display (HUD)
+### Heads Up Display (HUD)
 This is a basic implementation of an a heads up display, or alert view, that gracefully displays loading indicator and message.
 
 ![HUD Screen Shot](https://img.skitch.com/20110520-jmq5kfypf4q7gd5r2x95dbh286.jpg)
 
-#### Passcode Window (HUD)
+### Passcode Window (HUD)
 This module is designed to "lock down" an app by invoking a passcode screen and prompting a user to input a 4 digit code.  This is loosely based on Apple's internal passcode feature in iOS.
 
 ![Passcode Screen Shot](https://img.skitch.com/20110520-fd6mfdk1eypw2gseem11y4gj5w.jpg)
@@ -25,6 +25,7 @@ More modules to come...
 ## Accessing the Module APIs
 
 To access these modules from JavaScript, you would extend your app namespace in app.js and import the module using the global require() method:
+
 ```
     // Extend your existing app namespace for your modules to exist
 	  MyApp.mod = {};
@@ -36,11 +37,11 @@ To access these modules from JavaScript, you would extend your app namespace in 
 
 ### HUD - MyApp.mod.hud
 ```
-    var HUD = MyApp.mod.hud.init(MyApp.ui.win); // pass in the window to attach the HUD
-		HUD.show('YOUR MESSAGE');
-		setTimeout(function(){
-			HUD.hide();
-		},2000);
+  var HUD = MyApp.mod.hud.init(MyApp.ui.win); // pass in the window to attach the HUD
+	HUD.show('YOUR MESSAGE');
+	setTimeout(function(){
+		HUD.hide();
+	},2000);
 ```
 #### Methods
 ```
@@ -56,13 +57,13 @@ Note: Replace 'MyApp' with your own app namespace.
 
 ### Passcode - MyApp.mod.passcode
 ```
-    var PIN = MyApp.mod.passcode.init({code:1234,barColor:'#0079C1'});
-		PIN.open({
-			success:function(){
-			// do something
-		},error:function(){
-			// do something
-		}});
+  var PIN = MyApp.mod.passcode.init({code:1234,barColor:'#0079C1'});
+	PIN.open({
+		success:function(){
+		// do something
+	},error:function(){
+		// do something
+	}});
 ```
 #### Methods
 ```
@@ -78,8 +79,9 @@ Note: Replace 'MyApp' with your own app namespace.
 ## Author
 
 Terry Martin
-*   <http://twitter.com/tzmartin>
-*   <http://linkedin.com/in/terryzmartin>
+
+* <http://twitter.com/tzmartin>
+* <http://linkedin.com/in/terryzmartin>
 
 ## License
 
