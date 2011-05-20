@@ -6,9 +6,10 @@
 				
 		MyApp.ui.openWindow();
 				
-		// Fetch Data
+		// Fetch an endpoint to emulate pulling down data from a server...
 		MyApp.net.sendRequest('GET','http://www.google.com',false,function(resp) {
-			// Temp Data
+			
+			// Using temp data to emulate parsing JSON from the endpoint.
 			var data2 = [{title:'Title1'},{title:'Title2'}];
 			MyApp.ui.data = data2;
 			

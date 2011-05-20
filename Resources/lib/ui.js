@@ -66,7 +66,7 @@
 		// Add UI components
 		MyApp.ui.win.add(MyApp.ui.table);
 		
-		// Build Window
+		// Define a root window and add main window to invoke the navigationGroup
 		var win = Ti.UI.createWindow({backgroundColor:'#FFF'});
 		if (!MyApp.android) {
 			// navigationGroup (iPhone only)
