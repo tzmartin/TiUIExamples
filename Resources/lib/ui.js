@@ -1,7 +1,6 @@
 (function(){
 	MyApp.ui = {};
-	MyApp.ui.tabGroup = false;
-	MyApp.ui.tab1 = false;
+	MyApp.ui.navGroup = false;
 	MyApp.ui.win = false;
 	MyApp.ui.table = false;
 	MyApp.ui.data = [
@@ -9,18 +8,9 @@
 		{title:'Passcode Modal',hasDetail:true}
 	];
 	
-	/*
-	backButtonTitle: 'Back',
-	title:'Search',
-	barColor:'#ccc',
-	backgroundColor:'#FFF',
-	navBarHidden:false,
-	orientationModes: [Titanium.UI.PORTRAIT]
-	*/
 	MyApp.ui.createWindow = function(modal,callb) {
 		MyApp.ui.win = Ti.UI.createWindow({
-			modal : (modal) ? true : false,
-			tabBarHidden : true
+			modal : (modal) ? true : false
 		});
 		if (callb){ callb(); }
 	};
@@ -44,15 +34,6 @@
 			MyApp.ui.setupWindowHeader(MyApp.ui.win);
 		});
 		
-		MyApp.ui.tabGroup = Titanium.UI.createTabGroup();
-		MyApp.ui.tab1 = Titanium.UI.createTab({
-		  title: 'Tab1',
-			height:5,
-		  window: MyApp.ui.win
-		});
-		
-		MyApp.ui.tabGroup.addTab(MyApp.ui.tab1);
-		
 		// Create TableView
 		MyApp.ui.createTableView(function() {
 			// Add Event Listeners
@@ -60,7 +41,7 @@
 				
 				if (e.index == 0) {
 					var HUD = MyApp.mod.hud.init(MyApp.ui.win);
-					HUD.show('Clicked '+e.rowData.title);
+					HUD.show('Doing Something');
 					setTimeout(function(){
 						HUD.hide();
 					},2000);
@@ -76,19 +57,6 @@
 					}});
 				}
 				
-				/*
-				
-				var win = Ti.UI.createWindow({
-					url:'lib/win.detail.js',
-					backgroundColor:'#FFF',
-					barColor:'#0079C1',
-					titleImage:Titanium.Filesystem.resourcesDirectory+'/images/headerTitleLogo.png'
-				});
-				win.addEventListener('click',function() {
-					win.close();
-				});
-				MyApp.ui.tab1.open(win,{animated:true});
-				*/
 			});
 		});
 		
@@ -97,7 +65,20 @@
 		
 		// Add UI components
 		MyApp.ui.win.add(MyApp.ui.table);
-		MyApp.ui.tabGroup.open();
+		
+		// Build Window
+		var win = Ti.UI.createWindow({backgroundColor:'#FFF'});
+		if (!MyApp.android) {
+			// navigationGroup (iPhone only)
+			MyApp.ui.navGroup = Titanium.UI.iPhone.createNavigationGroup({
+			   window: MyApp.ui.win
+			});
+			win.add(MyApp.ui.navGroup);
+		} else {
+			win.add(MyApp.ui.win);
+		}
+		
+		win.open();
 	};
 
 })();

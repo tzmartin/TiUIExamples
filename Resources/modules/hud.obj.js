@@ -1,3 +1,6 @@
+// This is a module class object literal, rather than a commonJS implementation.
+// I added this to show an alternative method for creating modules.
+
 MyApp.hud = function (win, path) {
   path = path || '';
   var t1 = Titanium.UI.create2DMatrix();

@@ -4,7 +4,7 @@ Ti.include('lib/ui.js');
 Ti.include('lib/http.js');
 
 MyApp.mod = {};
-MyApp.mod.hud = require('modules/hud');
+MyApp.mod.hud = require('modules/hud.mod');
 MyApp.mod.passcode = require('modules/passcode.mod');
 
 // Run App

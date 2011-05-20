@@ -1,3 +1,6 @@
+// This is a module class object literal, rather than a commonJS implementation.
+// I added this to show an alternative method for creating modules.
+
 MyApp.passcode = {};
 MyApp.passcode._OBJ = {};
 MyApp.passcode.init = function(args) {
@@ -18,7 +21,8 @@ MyApp.passcode.init = function(args) {
 		// Build Window
 		MyApp.passcode._OBJ.win = Ti.UI.createWindow({
 			backgroundColor:'#FFF',
-			title:'Passcode'
+			title:'Passcode',
+			orientationModes: [Titanium.UI.PORTRAIT]
 		});
 		MyApp.passcode._OBJ.win.add(MyApp.passcode.view.mainView);
 		MyApp.passcode._OBJ.win.open({modal:true});

@@ -1,50 +1,4 @@
 var _OBJ = {};
-exports.init = function(args) {
-	Ti.API.info('init');
-	// Set defaults
-	_OBJ.code = '0000';
-	_OBJ.barColor = false;
-	_OBJ.success = false;
-	_OBJ.error = false;
-	
-	// Process Args
-	if (args) {
-		_OBJ.code = (args.code) ? args.code : false;
-		_OBJ.success = (args.success) ? args.success : false;
-		_OBJ.error = (args.error) ? args.error : false;
-		_OBJ.barColor = (args.barColor) ? args.barColor : false;
-	}
-	
-	// Methods
-	_OBJ.open = function(args) {			
-		// Build Window
-		_OBJ.win = Ti.UI.createWindow({
-			backgroundColor:'#FFF',
-			title:'Passcode'
-		});
-		if (_OBJ.barColor) {
-			_OBJ.win.barColor = _OBJ.barColor;
-		}
-		// Process Args
-		if (args) {
-			_OBJ.success = (args.success) ? args.success : false;
-			_OBJ.error = (args.error) ? args.error : false;
-		}
-		// Add View
-		_OBJ.win.add(View.mainView);
-		// Open Window
-		_OBJ.win.open({modal:true});
-		_OBJ.win.addEventListener('open',function(){
-			View.field0.focus();
-		});
-	};
-	
-	_OBJ.close = function() {
-		View.clear();
-		_OBJ.win.close();
-	};
-	return _OBJ;
-};
 
 var View = {
 	name : 'Passcode',
@@ -253,6 +207,54 @@ var View = {
 			Ti.API.info('There is no code set. Try passing in {code:1234} into init();');
 		}
 	}
+};
+
+exports.init = function(args) {
+	Ti.API.info('init');
+	// Set defaults
+	_OBJ.code = '0000';
+	_OBJ.barColor = false;
+	_OBJ.success = false;
+	_OBJ.error = false;
+	
+	// Process Args
+	if (args) {
+		_OBJ.code = (args.code) ? args.code : false;
+		_OBJ.success = (args.success) ? args.success : false;
+		_OBJ.error = (args.error) ? args.error : false;
+		_OBJ.barColor = (args.barColor) ? args.barColor : false;
+	}
+	
+	// Methods
+	_OBJ.open = function(args) {			
+		// Build Window
+		_OBJ.win = Ti.UI.createWindow({
+			backgroundColor:'#FFF',
+			title:'Passcode',
+			orientationModes: [Titanium.UI.PORTRAIT]
+		});
+		if (_OBJ.barColor) {
+			_OBJ.win.barColor = _OBJ.barColor;
+		}
+		// Process Args
+		if (args) {
+			_OBJ.success = (args.success) ? args.success : false;
+			_OBJ.error = (args.error) ? args.error : false;
+		}
+		// Add View
+		_OBJ.win.add(View.mainView);
+		// Open Window
+		_OBJ.win.open({modal:true});
+		_OBJ.win.addEventListener('open',function(){
+			View.field0.focus();
+		});
+	};
+	
+	_OBJ.close = function() {
+		View.clear();
+		_OBJ.win.close();
+	};
+	return _OBJ;
 };
 
 View.initialize();

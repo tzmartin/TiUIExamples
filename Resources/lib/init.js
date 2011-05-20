@@ -5,9 +5,7 @@
 		Ti.API.info('initializing app');
 				
 		MyApp.ui.openWindow();
-		
-		// Show Indicator (if possible)
-		
+				
 		// Fetch Data
 		MyApp.net.sendRequest('GET','http://www.google.com',false,function(resp) {
 			// Temp Data

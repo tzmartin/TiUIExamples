@@ -1,3 +1,6 @@
+// An easter egg!
+// Here's an object module class for XHR requests.
+
 (function() {
 	MyApp.net = {};
 	MyApp.net.lastHttpResult = false;
