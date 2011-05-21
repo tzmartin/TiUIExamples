@@ -81,7 +81,6 @@ MyApp.mod = {};
 MyApp.mod.hud = require('modules/hud');
 MyApp.mod.passcode = require('modules/passcode.mod');
 ```
-More modules to come.  Follow me on Twitter or contact me if you need a module developed.
 
 # Author
 
@@ -90,6 +89,9 @@ Master Trainer, Appcelerator. Founder of Semantic Press.
 
 * <http://twitter.com/tzmartin>
 * <http://linkedin.com/in/terryzmartin>
+* <http://semanticpress.com>
+
+More modules to come.  Follow me on Twitter or contact me if you need a module developed.
 
 # License
 
