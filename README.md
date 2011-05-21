@@ -1,7 +1,5 @@
 # TiUIExamples
 
-## Description
-
 This app is a collection of various UI design patterns written as JavaScript modules for Titanium Mobile.  This will show you how to develop and implement factory components for event driven mobile applications.
 
 There are currently 2 UI modules in this version.
@@ -31,7 +29,7 @@ setTimeout(function(){
 	HUD.hide();
 },2000);
 ```
-##### Methods
+#### Methods
 
 ```
 init(win);      // Properties: object - window  (required)
@@ -99,3 +97,5 @@ This content is released under the  MIT License.
 http://www.opensource.org/licenses/mit-license.php
 
 Enjoy! Stay tuned for more modules being added to this project.
+
+![Hi](http://c.statcounter.com/6897643/0/9890c16f/1/)
