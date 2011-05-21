@@ -13,14 +13,14 @@ For previous version, you may use the object literal modules instead (located in
 
 ![Screenshot 1](https://img.skitch.com/20110520-d1eeyexu28scp7xnpieenirwmd.jpg)
 
-## Description
+# The Modules
 
-### 1. Heads Up Display (aka, HUD)
+## 1. Heads Up Display (aka, HUD)
 This is a basic implementation of an a heads up display, or modal view, that gracefully displays loading indicator and message.
 
 ![HUD Screen Shot](https://img.skitch.com/20110520-jmq5kfypf4q7gd5r2x95dbh286.jpg)
 
-#### Usage
+### Usage
 
 ```
 var HUD = MyApp.mod.hud.init(MyApp.ui.win); // pass in the window to attach the HUD
@@ -29,7 +29,7 @@ setTimeout(function(){
 	HUD.hide();
 },2000);
 ```
-#### Methods
+### Methods
 
 ```
 init(win);      // Properties: object - window  (required)
@@ -42,12 +42,12 @@ hide();         // Properties: none
 
 Note: Replace 'MyApp' with your own app namespace.
 
-### 2. Passcode Window
+## 2. Passcode Window
 This module is designed to "lock down" an app by invoking a passcode screen and prompting a user to input a 4 digit code.  This is loosely based on Apple's internal passcode feature in iOS.
 
 ![Passcode Screen Shot](https://img.skitch.com/20110520-fd6mfdk1eypw2gseem11y4gj5w.jpg)
 
-#### Usage
+### Usage
 
 ```
 var PIN = MyApp.mod.passcode.init({code:1234,barColor:'#0079C1'});
@@ -59,7 +59,7 @@ PIN.open({
 }});
 ```
 
-#### Methods
+### Methods
 
 ```
 init(code,barColor);  // Properties: integer - 4 digits (required); string - hex color value (optional)
@@ -71,7 +71,7 @@ close();              // Properties: none
 
 Note: Replace 'MyApp' with your own app namespace.
 
-## Accessing the Module APIs
+# Accessing the Module APIs
 
 To access these modules from JavaScript, you would extend your app namespace in app.js and import the module using the global require() method:
 
@@ -83,7 +83,7 @@ MyApp.mod.passcode = require('modules/passcode.mod');
 ```
 More modules to come.  Follow me on Twitter or contact me if you need a module developed.
 
-## Author
+# Author
 
 Terry Martin
 Master Trainer, Appcelerator. Founder of Semantic Press.
@@ -91,7 +91,7 @@ Master Trainer, Appcelerator. Founder of Semantic Press.
 * <http://twitter.com/tzmartin>
 * <http://linkedin.com/in/terryzmartin>
 
-## License
+# License
 
 This content is released under the  MIT License.
 http://www.opensource.org/licenses/mit-license.php
