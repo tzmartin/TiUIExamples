@@ -60,6 +60,7 @@
 			});
 		});
 		
+		
 		// Set Default data
 		MyApp.ui.table.setData(MyApp.ui.data);
 		
