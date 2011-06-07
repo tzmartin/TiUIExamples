@@ -4,7 +4,7 @@ This app is a collection of various UI design patterns written as JavaScript mod
 
 There are currently 2 UI modules in this version.
 
-THIS IS FOR iOS ONLY.  Sorry.  Android support is coming next.
+THIS IS FOR iOS ONLY.  Sorry.  Android support is coming next. :-)
 
 <b>Required:</b> Titanium Mobile SDK 1.7.x 
 <http://developer.appcelerator.com/blog/2011/05/titanium-mobile-sdk-1-7-rc1.html>
